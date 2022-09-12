@@ -3,7 +3,7 @@ import GoodItem from './GoodItem';
 
 
 export default function GoodList(props) {
-    const {goods = []} = props;
+    const {goods = [], addToBasket} = props;
 
     if(!goods.length){
         return <h3>Nothing here</h3>
@@ -12,7 +12,7 @@ export default function GoodList(props) {
   return (
     <div className='goods'>
         {goods.map((item)=>(
-            <GoodItem key={item.id} {...item}/>
+            <GoodItem key={item.id} {...item} addToBasket={addToBasket}/>
         ))}
     </div>
   )
